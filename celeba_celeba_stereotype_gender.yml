@@ -1,0 +1,9 @@
+att_to_debias: 'gender'
+query_type: 'stereotype'
+debias_with_ground_truth: True
+debias_with_predicted_labels: False
+reference_dataset_name: 'CelebaHQ_dialog'
+target_dataset_name: "CelebaHQ_dialog"
+model_ID: 'openai/clip-vit-large-patch14' 
+optimization_method: 'projection_walk'
+random_seed: 0
