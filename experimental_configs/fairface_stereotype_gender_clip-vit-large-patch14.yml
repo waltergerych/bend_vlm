@@ -1,0 +1,5 @@
+att_to_debias: 'gender'
+query_type: 'stereotype'
+dataset_name: 'fairface'
+model_ID: 'openai/clip-vit-large-patch14' 
+random_seed: 0
