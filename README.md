@@ -6,12 +6,23 @@ Please download the [Celeba_HQ_dialog](https://github.com/ziqihuangg/CelebA-Dial
 
 Next, run the following to process the datasets (precompute the CLIP embeddings):
 
-`python create_dataset.py --_MODEL_NAME 'clip-vit-base-patch16' --data_path 'PATH_TO_FAIRFACE' --meta_data_file_name 'fairface_label_train.csv' --dataset_name 'fairface'`
+```console
+python create_dataset.py --_MODEL_NAME 'clip-vit-base-patch16' --data_path 'PATH_TO_FAIRFACE' --meta_data_file_name 'fairface_label_train.csv' --dataset_name 'fairface'
+python create_dataset.py --_MODEL_NAME 'clip-vit-large-patch14' --data_path 'PATH_TO_FAIRFACE'  --meta_data_file_name 'fairface_label_train.csv' --dataset_name 'fairface'
+python create_dataset.py --_MODEL_NAME 'clip-vit-base-patch16' --data_path 'PATH_TO_CELEBA'  --meta_data_file_name 'CelebAMask-HQ-attribute-anno.txt' --dataset_name 'celeba'
+python create_dataset.py --_MODEL_NAME 'clip-vit-large-patch14' --data_path 'PATH_TO_CELEBA' --meta_data_file_name 'CelebAMask-HQ-attribute-anno.txt' --dataset_name 'celeba'
+```
 
-`python create_dataset.py --_MODEL_NAME 'clip-vit-large-patch14' --data_path 'PATH_TO_FAIRFACE'  --meta_data_file_name 'fairface_label_train.csv' --dataset_name 'fairface'`
+## Pre-Generating Query Augmentations
 
-`python create_dataset.py --_MODEL_NAME 'clip-vit-base-patch16' --data_path 'PATH_TO_CELEBA'  --meta_data_file_name 'CelebAMask-HQ-attribute-anno.txt' --dataset_name 'celeba'`
+Rather than generating gender and race augmentations on-the-fly using our AttributeAugment componenent, for the purposes of our experiments only we pre-generate the augmenations for efficiency. You can pre-generate these augmentations by running:
 
-`python create_dataset.py --_MODEL_NAME 'clip-vit-large-patch14' --data_path 'PATH_TO_CELEBA' --meta_data_file_name 'CelebAMask-HQ-attribute-anno.txt' --dataset_name 'celeba'`
+```console
+python get_pregenerated_attribute_augmentations.py --query_type "hair" --att_to_debias "gender"
+python get_pregenerated_attribute_augmentations.py --query_type "stereotype" --att_to_debias "gender"
+python get_pregenerated_attribute_augmentations.py --query_type "stereotype" --att_to_debias "race"
+```
+## Experimental Results
 
+You can perform a comparative analysis between Bend_VLM and the compared methods by running the cells in the `demo.ipynb` notebook. You can change the dataset, protected atttribute (race/gender), query class type (hair or stereotype), and CLIP embedding model by passing in the appropriate config file in `config = yaml.safe_load(open("experimental_configs/celeba_hair_gender_clip-vit-base-patch16.yml"))`. Each config file is named as `{dataset}_{protected_attribute}_{query_type}_{model_name}`.
 
