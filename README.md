@@ -1,6 +1,12 @@
 # bend_vlm
 Demo code for "Test-Time Debiasing of Vision-Language Embeddings".
 
+##Installing Packages
+
+```console
+pip install -r requirements.txt
+```
+
 ## Preparing Datasets
 Please download the [Celeba_HQ_dialog](https://github.com/ziqihuangg/CelebA-Dialog) and [FairFace](https://github.com/joojs/fairface) datasets from their sources.
 
