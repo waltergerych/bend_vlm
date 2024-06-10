@@ -1,7 +1,7 @@
 # bend_vlm
 Demo code for "Test-Time Debiasing of Vision-Language Embeddings".
 
-##Installing Packages
+## Installing Packages
 
 ```console
 pip install -r requirements.txt
