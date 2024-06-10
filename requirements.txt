@@ -1,0 +1,10 @@
+torch
+numpy
+kneed
+scikit-learn
+sentence-transformers
+scipy
+pandas
+matplotlib
+transformers
+notebook
