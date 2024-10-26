@@ -1,5 +1,5 @@
 # BendVLM
-Demo code for "Test-Time Debiasing of Vision-Language Embeddings".
+Demo code for "BendVLM: Test-Time Debiasing of Vision-Language Embeddings" (NeurIPS 2024).
 
 ## Installing Packages
 
@@ -32,3 +32,13 @@ python get_pregenerated_attribute_augmentations.py --query_type "stereotype" --a
 
 You can perform a comparative analysis between Bend_VLM and the compared methods by running the cells in the `demo_debias.ipynb` notebook. You can change the dataset, protected atttribute (race/gender), query class type (hair or stereotype), and CLIP embedding model by passing in the appropriate config file in `config = yaml.safe_load(open("experimental_configs/celeba_hair_gender_clip-vit-base-patch16.yml"))`. Each config file is named as `{dataset}_{protected_attribute}_{query_type}_{model_name}`.
 
+## Citation
+
+```
+@inproceedings{gerych2024bendvlm,
+ title={BendVLM: Test Time Debiasing Of Pretrained Vision-Language Models},
+ author={Walter Gerych and Haoran Zhang and Kimia Hamidieh and Eileen Pan and Maanas Sharma and Thomas Hartvigsen and Marzyeh Ghassemi},
+ booktitle = {Advances in Neural Information Processing Systems},
+ year = {2024}
+}
+```
