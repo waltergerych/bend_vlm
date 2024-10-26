@@ -1,4 +1,4 @@
-# BendVLM
+# "BendVLM: Test-Time Debiasing of Vision-Language Embeddings" (NeurIPS 2024)
 Demo code for "BendVLM: Test-Time Debiasing of Vision-Language Embeddings" (NeurIPS 2024).
 
 ## Installing Packages
