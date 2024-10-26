@@ -1,4 +1,4 @@
-# bend_vlm
+# BendVLM
 Demo code for "Test-Time Debiasing of Vision-Language Embeddings".
 
 ## Installing Packages
